@@ -1,120 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zeynox Studios</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
+    body {
       font-family: Arial, Helvetica, sans-serif;
-      color:white;
-      height:100vh;
-
-      background:
-      radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 60%, #000 100%);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+      color: white;
+      min-height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 60%, #000 100%);
     }
 
-    .container{
-      max-width:800px;
-      padding:40px;
+    .container {
+      position: relative;
+      z-index: 2;
+      width: min(90%, 800px);
+      padding: 40px 24px;
     }
 
-    h1{
-      font-size:64px;
-      letter-spacing:10px;
-      margin-bottom:20px;
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 18px;
+    }
 
+    .brand {
+      font-size: clamp(56px, 10vw, 82px);
+      letter-spacing: 10px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 18px;
       text-shadow:
-      0 0 10px rgba(255,255,255,0.15),
-      0 0 30px rgba(255,255,255,0.05);
+        0 0 10px rgba(255,255,255,0.15),
+        0 0 30px rgba(255,255,255,0.05);
     }
 
-    .tagline{
-      font-size:20px;
-      opacity:0.85;
-      margin-bottom:8px;
+    .type {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.72;
+      margin-bottom: 24px;
     }
 
-    .subtext{
-      font-size:16px;
-      opacity:0.6;
-      margin-bottom:40px;
+    .divider {
+      width: 82px;
+      height: 1px;
+      margin: 0 auto 24px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+      );
     }
 
-    .links{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
+    .coming {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 34px;
     }
 
-    a{
-      padding:12px 22px;
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:6px;
-      color:white;
-      text-decoration:none;
-      font-size:14px;
-      transition:all 0.25s ease;
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    a:hover{
-      background:white;
-      color:black;
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    .links a {
+      padding: 12px 20px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.25s ease;
+      min-width: 118px;
     }
 
-    footer{
-      position:absolute;
-      bottom:20px;
-      width:100%;
-      text-align:center;
-      font-size:12px;
-      opacity:0.4;
+    .links a:hover {
+      background: white;
+      color: black;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
+    .corner {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-color: rgba(255,255,255,0.16);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tl {
+      top: 14px;
+      left: 14px;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    .tr {
+      top: 14px;
+      right: 14px;
+      border-top: 1px solid;
+      border-right: 1px solid;
+    }
+
+    .bl {
+      bottom: 14px;
+      left: 14px;
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+    }
+
+    .br {
+      bottom: 14px;
+      right: 14px;
+      border-bottom: 1px solid;
+      border-right: 1px solid;
+    }
+
+    .dot {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 0 8px rgba(255,255,255,0.06);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .d1 { top: 20%; left: 18%; }
+    .d2 { top: 26%; right: 20%; }
+    .d3 { bottom: 22%; left: 22%; }
+    .d4 { bottom: 18%; right: 18%; }
+
+    footer {
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.28;
+      z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 36px 18px;
+      }
+
+      .brand {
+        letter-spacing: 7px;
+      }
+
+      .type {
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+
+      .coming {
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+
+      .links a {
+        min-width: 100px;
+        padding: 11px 14px;
+        font-size: 11px;
+      }
+    }
   </style>
-
 </head>
-
 <body>
 
-  <div class="container">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
 
-    <h1>ZEYNOX</h1>
+  <div class="dot d1"></div>
+  <div class="dot d2"></div>
+  <div class="dot d3"></div>
+  <div class="dot d4"></div>
 
-    <p class="tagline">Independent game studio</p>
-    <p class="subtext">Building worlds through games</p>
+  <main class="container">
+    <div class="eyebrow">Game Studio</div>
+
+    <h1 class="brand">ZEYNOX</h1>
+    <!-- Replace this h1 with your logo later -->
+
+    <p class="type">Independent Game Studio</p>
+
+    <div class="divider"></div>
+
+    <p class="coming">Coming Soon</p>
 
     <div class="links">
-
       <a href="https://instagram.com/zeynoxstudios" target="_blank">Instagram</a>
-
       <a href="https://twitter.com/zeynoxstudios" target="_blank">Twitter</a>
-
       <a href="https://www.youtube.com/@zeynoxstudios" target="_blank">YouTube</a>
-
+      <a href="https://www.tiktok.com/@zeynoxstudios" target="_blank">TikTok</a>
     </div>
+  </main>
 
-  </div>
-
-  <footer>
-    © 2026 Zeynox Studios
-  </footer>
+  <footer>© 2026 Zeynox Studios</footer>
 
 </body>
-
 </html>
