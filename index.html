@@ -205,26 +205,135 @@
 		color:black;
 		transform:translateY(-2px);
 		box-shadow:0 8px 25px rgba(0,0,0,0.5);
-	}
+		}
     }
+	
+	.stars {
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		overflow: hidden;
+		z-index: 0;
+	}
+
+	.star {
+		position: absolute;
+		width: 2px;
+		height: 2px;
+		background: white;
+		opacity: 0.25;
+		border-radius: 50%;
+		animation: drift linear infinite;
+		}
+
+	@keyframes drift {
+		from {
+			transform: translateY(0px);
+		}
+		to {
+			transform: translateY(-120vh);
+		}
+	}
+	
+	#secretFooter {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.28;
+  z-index: 2;
+
+  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+#secretFooter:hover {
+  opacity: 0.36;
+  text-shadow: 0 0 4px rgba(255,255,255,0.08);
+}
+	
+	.ship {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  pointer-events: auto;
+  cursor: crosshair;
+  z-index: 10;
+
+  transition:
+    left 3.8s ease-in-out,
+    top 3.8s ease-in-out,
+    opacity 0.2s ease;
+}
+
+.ship-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition:
+    transform 0.12s linear,
+    filter 0.2s ease;
+}
+
+/* spaceship body */
+.ship-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(50% 0%, 88% 72%, 50% 58%, 12% 72%);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.18));
+}
+
+/* cockpit */
+.ship-inner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.7);
+}
+
+.ship.destroying {
+  opacity: 0;
+}
+
+.ship.destroying .ship-inner {
+  transform: scale(1.3) !important;
+}
+
+.ship.destroying .ship-inner::before {
+  background: #ff3b3b;
+  filter: drop-shadow(0 0 10px rgba(255,59,59,0.6));
+}
   </style>
 </head>
 <body>
 
-  <div class="corner tl"></div>
-  <div class="corner tr"></div>
-  <div class="corner bl"></div>
-  <div class="corner br"></div>
+	<div class="stars"></div>
+	<div class="corner tl"></div>
+	<div class="corner tr"></div>
+	<div class="corner bl"></div>
+	<div class="corner br"></div>
 
-  <div class="dot d1"></div>
-  <div class="dot d2"></div>
-  <div class="dot d3"></div>
-  <div class="dot d4"></div>
+	<div class="dot d1"></div>
+	<div class="dot d2"></div>
+	<div class="dot d3"></div>
+	<div class="dot d4"></div>
 
   <main class="container">
     <div class="eyebrow">Game Studio</div>
 
     <h1 class="brand">ZEYNOX</h1>
+    <!-- Replace this h1 with your logo later -->
 
     <p class="type">Independent Game Studio</p>
 
@@ -239,7 +348,189 @@
     </div>
   </main>
 
-  <footer>© 2026 Zeynox Studios</footer>
+  <footer id="secretFooter">© 2026 Zeynox Studios</footer>
+
+
+<script>
+const starContainer = document.querySelector(".stars");
+
+for (let i = 0; i < 40; i++) {
+
+  const star = document.createElement("div");
+  star.className = "star";
+
+  const size = Math.random() * 2 + 1;
+
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.top = Math.random() * 100 + "vh";
+
+  star.style.animationDuration = (Math.random() * 20 + 20) + "s";
+
+  starContainer.appendChild(star);
+}
+</script>
+
+<script>
+	let footerClickCount = 0;
+	let secretActive = false;
+	let activeShips = [];
+
+	const REQUIRED_CLICKS = 5;
+	const SHIP_COUNT = 6;
+
+	const footer = document.getElementById("secretFooter");
+
+	const footerMessages = [
+		"© 2026 Zeynox Studios",
+		"© 2026 Zeynox Studios — hmm?",
+		"© 2026 Zeynox Studios — interesting...",
+		"© 2026 Zeynox Studios — keep going",
+		"© 2026 Zeynox Studios — almost there"
+	];
+
+	footer.addEventListener("click", () => {
+
+	if (secretActive) return;
+
+	footerClickCount++;
+
+	if (footerClickCount < footerMessages.length) {
+		footer.textContent = footerMessages[footerClickCount];
+	}
+
+	if (footerClickCount >= REQUIRED_CLICKS) {
+		activateSecretMode();
+	}
+
+	});
+
+  function activateSecretMode() {
+    secretActive = true;
+    spawnShips(SHIP_COUNT);
+  }
+
+  function spawnShips(count) {
+    for (let i = 0; i < count; i++) {
+      createShip();
+    }
+  }
+
+  function createShip() {
+    const ship = document.createElement("div");
+	ship.className = "ship";
+	ship.innerHTML = '<div class="ship-inner"></div>';
+
+    const startX = randomInRange(40, window.innerWidth - 40);
+    const startY = randomInRange(40, window.innerHeight - 40);
+
+    ship.style.left = startX + "px";
+    ship.style.top = startY + "px";
+
+    document.body.appendChild(ship);
+    activeShips.push(ship);
+
+    ship.addEventListener("click", () => destroyShip(ship), { once: true });
+
+    requestAnimationFrame(() => {
+      moveShip(ship);
+    });
+  }
+
+  function moveShip(ship) {
+    if (!document.body.contains(ship)) return;
+    if (ship.classList.contains("destroying")) return;
+
+    const currentX = parseFloat(ship.style.left) || 0;
+    const currentY = parseFloat(ship.style.top) || 0;
+
+    let targetX, targetY, dx, dy, distance;
+    const minDistance = 140;
+
+    do {
+      targetX = randomInRange(30, window.innerWidth - 50);
+      targetY = randomInRange(30, window.innerHeight - 50);
+
+      dx = targetX - currentX;
+      dy = targetY - currentY;
+      distance = Math.hypot(dx, dy);
+    } while (distance < minDistance);
+
+    // Base spaceship points upward, so add 90deg
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+
+    // Use the already calculated distance
+    const duration = clamp(distance / 90, 2.4, 5.5);
+
+    ship.style.transition =
+      `left ${duration}s ease-in-out, top ${duration}s ease-in-out, opacity 0.2s ease`;
+
+    const inner = ship.querySelector(".ship-inner");
+    inner.style.transform = `rotate(${angle}deg)`;
+
+    ship.style.left = targetX + "px";
+    ship.style.top = targetY + "px";
+
+    const handleArrival = (e) => {
+      if (e.propertyName !== "left") return;
+
+      ship.removeEventListener("transitionend", handleArrival);
+
+      if (!document.body.contains(ship)) return;
+      if (ship.classList.contains("destroying")) return;
+
+      setTimeout(() => {
+        moveShip(ship);
+      }, randomInRange(120, 500));
+    };
+
+    ship.addEventListener("transitionend", handleArrival);
+  }
+
+  function destroyShip(ship) {
+    if (!document.body.contains(ship)) return;
+    if (ship.classList.contains("destroying")) return;
+
+    ship.classList.add("destroying");
+
+    setTimeout(() => {
+      ship.remove();
+      activeShips = activeShips.filter(s => s !== ship);
+
+      if (activeShips.length === 0) {
+        resetSecretMode();
+      }
+    }, 180);
+  }
+
+	function resetSecretMode() {
+		footerClickCount = 0;
+		secretActive = false;
+		footer.textContent = "© 2026 Zeynox Studios";
+	}
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  window.addEventListener("resize", () => {
+    activeShips.forEach(ship => {
+      if (!document.body.contains(ship)) return;
+
+      const x = clamp(parseFloat(ship.style.left) || 0, 20, window.innerWidth - 40);
+      const y = clamp(parseFloat(ship.style.top) || 0, 20, window.innerHeight - 40);
+
+      ship.style.left = x + "px";
+      ship.style.top = y + "px";
+    });
+  });
+</script>
 
 </body>
 </html>
