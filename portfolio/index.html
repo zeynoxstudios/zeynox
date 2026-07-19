@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Arsalan - Software Engineer | Zeynox Studios</title>
+  <meta name="description" content="Portfolio of Ali Arsalan, a software engineer based in Islamabad working across full-stack platforms, desktop applications, game development, AI workflows, cloud deployment, and experimental hardware.">
+  <meta name="theme-color" content="#0a0a0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ali Arsalan - Software Engineer | Zeynox Studios">
+  <meta property="og:description" content="Portfolio of Ali Arsalan, a software engineer based in Islamabad working across full-stack platforms, desktop applications, game development, AI workflows, cloud deployment, and experimental hardware.">
+  <meta property="og:url" content="https://zeynoxstudios.com/portfolio/">
+  <meta property="og:image" content="https://zeynoxstudios.com/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zeynoxstudios.com/portfolio/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --bg: #09090c;
+      --bg-soft: #111116;
+      --text: #f5f0e8;
+      --muted: #c6bfb2;
+      --soft: #938c82;
+      --accent: #e7d5b6;
+      --accent-strong: #fff4df;
+      --line: rgba(255, 255, 255, 0.12);
+      --line-soft: rgba(255, 255, 255, 0.08);
+      --font-display: Georgia, "Times New Roman", serif;
+      --font-body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      --font-ui: "Bahnschrift", "Segoe UI", sans-serif;
+      --content: 1180px;
+      --nav-height: 78px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, rgba(126, 103, 72, 0.2), transparent 30%),
+        radial-gradient(circle at 82% 18%, rgba(78, 89, 111, 0.14), transparent 24%),
+        linear-gradient(180deg, #0a0a0d 0%, #101014 38%, #09090c 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.25;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.82), transparent);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid rgba(255, 244, 223, 0.95);
+      outline-offset: 4px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 8, 11, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .topbar-inner,
+    .section,
+    .footer-inner {
+      width: min(calc(100% - 32px), var(--content));
+      margin: 0 auto;
+    }
+
+    .topbar-inner {
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand-copy strong,
+    .nav-link,
+    .eyebrow,
+    .section-eyebrow,
+    .chip,
+    .pill,
+    .meta-label,
+    .detail-label,
+    .support-meta,
+    .timeline-role,
+    .footer-label,
+    .cta,
+    .case-study-button {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 3px;
+      color: var(--soft);
+      font-size: 0.77rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.74rem;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .nav-home {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero {
+      padding: 72px 0 52px;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 10px 0 28px;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(231, 213, 182, 0.08), transparent 26%),
+        radial-gradient(circle at 84% 18%, rgba(116, 128, 151, 0.1), transparent 25%);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 62rem;
+    }
+
+    .eyebrow,
+    .section-eyebrow {
+      color: var(--accent);
+      font-size: 0.76rem;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+      line-height: 0.98;
+    }
+
+    h1,
+    h2,
+    .project-title,
+    .support-title,
+    .timeline-org,
+    .education-card h3,
+    .contact-card h3 {
+      font-family: var(--font-display);
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 9vw, 6.4rem);
+      max-width: 7ch;
+      margin-bottom: 22px;
+    }
+
+    .hero-intro {
+      max-width: 44rem;
+      font-size: clamp(1.08rem, 2.1vw, 1.42rem);
+      line-height: 1.7;
+      color: var(--accent-strong);
+    }
+
+    .hero-support {
+      max-width: 43rem;
+      margin-top: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .hero-context {
+      max-width: 46rem;
+      margin-top: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-context p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .cta,
+    .case-study-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 700;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .cta-primary {
+      background: linear-gradient(135deg, #f4e7cf, #ddc09a);
+      color: #15110d;
+    }
+
+    .cta-secondary,
+    .case-study-button,
+    .copy-button {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--text);
+    }
+
+    .cta-tertiary {
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 52px;
+      padding: 0 4px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cta:hover,
+    .case-study-button:hover,
+    .copy-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-notes {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .note-card {
+      padding-top: 14px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .meta-label {
+      display: block;
+      color: var(--soft);
+      font-size: 0.67rem;
+      margin-bottom: 8px;
+    }
+
+    .note-card p {
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 0.96rem;
+    }
+
+    .section {
+      padding: 42px 0;
+      scroll-margin-top: calc(var(--nav-height) + 20px);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .section-card,
+    .project-card,
+    .support-card,
+    .timeline-card,
+    .capability-group,
+    .education-card,
+    .beyond-card,
+    .contact-card {
+      position: relative;
+    }
+
+    .section-card {
+      padding: 12px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+      gap: 18px;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-copy strong {
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .about-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-box {
+      padding: 18px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--soft);
+      font-size: 0.68rem;
+      margin-bottom: 9px;
+    }
+
+    .detail-box p {
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .featured-grid,
+    .timeline,
+    .capability-layout {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      column-gap: clamp(28px, 4vw, 52px);
+      min-height: 440px;
+      padding: 24px 0 34px;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .project-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top, rgba(231, 213, 182, 0.18), transparent 22%),
+        linear-gradient(180deg, rgba(17, 18, 25, 0.88), rgba(8, 8, 11, 1));
+      border-left: 1px solid var(--line-soft);
+    }
+
+    .project-visual::before,
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .project-visual::before {
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.4;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 88%);
+    }
+
+    .project-visual::after {
+      inset: auto 8% 10% 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    }
+
+    .visual-stage {
+      position: absolute;
+      inset: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .visual-top,
+    .visual-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .visual-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(8, 8, 11, 0.5);
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .visual-center {
+      position: relative;
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-center::before {
+      content: "";
+      width: min(68%, 300px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at center, rgba(231, 213, 182, 0.18), transparent 44%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 58%);
+      box-shadow: inset 0 0 0 24px rgba(255, 255, 255, 0.012);
+    }
+
+    .visual-monogram {
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      color: var(--accent-strong);
+      letter-spacing: 0.06em;
+    }
+
+    .project-copy {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .project-kicker,
+    .support-meta {
+      color: var(--soft);
+      font-size: 0.75rem;
+    }
+
+    .project-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-top: 6px;
+    }
+
+    .private-label {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(231, 213, 182, 0.24);
+      background: rgba(231, 213, 182, 0.08);
+      color: var(--accent);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .project-summary {
+      color: var(--accent-strong);
+      line-height: 1.75;
+      font-size: 1rem;
+      max-width: 32rem;
+    }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 16px;
+    }
+
+    .project-detail {
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .project-detail strong {
+      display: block;
+      color: var(--accent-strong);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .project-tags,
+    .support-tags,
+    .capability-tags,
+    .study-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.028);
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .support-grid,
+    .education-layout,
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .support-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .support-card,
+    .capability-group,
+    .timeline-card,
+    .education-card,
+    .beyond-card {
+      padding: 20px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .support-title {
+      display: block;
+      font-size: 1.4rem;
+      margin: 8px 0 12px;
+      line-height: 1.15;
+    }
+
+    .support-card p,
+    .timeline-description,
+    .timeline-card li,
+    .education-card p,
+    .beyond-card p,
+    .contact-card p,
+    .footer-copy {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .timeline-side {
+      padding-right: 16px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-date {
+      color: var(--accent-strong);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .timeline-location {
+      margin-top: 10px;
+      color: var(--soft);
+      line-height: 1.6;
+    }
+
+    .timeline-role {
+      color: var(--soft);
+      font-size: 0.74rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline-org {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-description {
+      margin-bottom: 14px;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-card li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f0dcc0, #8b94a7);
+      vertical-align: middle;
+      transform: translateY(-1px);
+    }
+
+    .capability-layout {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capability-group h3 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .education-card h3,
+    .contact-card h3 {
+      font-size: 1.85rem;
+      margin: 8px 0 12px;
+    }
+
+    .contact-card {
+      padding: 20px 0 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .copy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+
+    .copy-status {
+      margin-top: 12px;
+      min-height: 1.4em;
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 24px 0 48px;
+    }
+
+    .footer-inner {
+      padding: 24px 0 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-label {
+      color: var(--soft);
+      font-size: 0.7rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-copy {
+      max-width: 42rem;
+      font-size: 0.94rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .project-card,
+      .section-heading,
+      .about-layout,
+      .timeline-card,
+      .contact-card,
+      .education-layout,
+      .beyond-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-side {
+        border-right: 0;
+        padding-right: 0;
+      }
+
+      .project-visual {
+        border-left: 0;
+        border-top: 1px solid var(--line-soft);
+      }
+
+      .project-card {
+        row-gap: 24px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-notes,
+      .support-grid,
+      .capability-layout,
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner,
+      .section,
+      .footer-inner {
+        width: min(calc(100% - 24px), var(--content));
+      }
+
+      .topbar-inner,
+      .footer-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links,
+      .contact-actions {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ali Arsalan",
+      "jobTitle": "Software Engineer",
+      "url": "https://zeynoxstudios.com/portfolio/",
+      "email": "mailto:aliarsalan.u6@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/ali-arsalan-2481213b2/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Islamabad",
+        "addressCountry": "Pakistan"
+      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Pak Institute of Peace Studies"
+        },
+        {
+          "@type": "Organization",
+          "name": "APRO"
+        }
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Capital University of Science & Technology"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-link" href="../index.html" aria-label="Return to Zeynox Studios homepage">
+        <img class="brand-mark" src="../icon-black.svg" alt="Zeynox Studios logo">
+        <span class="brand-copy">
+          <strong>Zeynox Studios</strong>
+          <span>Ali Arsalan portfolio</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Portfolio sections">
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link nav-home" href="../index.html">Zeynox Studios</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="section hero-panel reveal" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Ali Arsalan / Islamabad, Pakistan</p>
+          <h1>Software Engineer</h1>
+          <p class="hero-intro">I build complete digital products across web, desktop, games, AI workflows, and experimental hardware, combining technical problem-solving with thoughtful user experiences.</p>
+          <p class="hero-support">My work ranges from organizational platforms and production websites to psychological horror games, multiplayer systems, AI document tools, and connected-device experiments.</p>
+
+          <div class="hero-context">
+            <p>I'm Ali Arsalan, a software engineering student and working developer based in Islamabad. I enjoy building systems that connect technical depth with a usable final product, from internal tools and production websites to desktop software and game systems.</p>
+            <p>I currently lead IT and digital development work at the Pak Institute of Peace Studies while also directing technical and product development for APRO. Under Zeynox Studios, I'm also developing <strong>Whispers of the Book</strong>, a psychological horror game being prepared for Steam.</p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="cta cta-primary" href="#work">Explore My Work</a>
+            <a class="cta cta-secondary" href="mailto:aliarsalan.u6@gmail.com">Contact Me</a>
+            <a class="cta-tertiary" href="../index.html">Back to Zeynox Studios</a>
+          </div>
+
+          <div class="hero-notes">
+            <article class="note-card">
+              <span class="meta-label">Throughline</span>
+              <p>Build the full system well, then shape the final experience with equal care.</p>
+            </article>
+            <article class="note-card">
+              <span class="meta-label">Current focus</span>
+              <p>Platforms, production websites, game systems, AI workflows, and technical operations.</p>
+            </article>
+            <article class="note-card">
+              <span class="meta-label">Identity</span>
+              <p>Grounded engineering with a future-facing studio sensibility under Zeynox Studios.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">About</p>
+          <h2>Built around full-lifecycle problem solving.</h2>
+        </div>
+        <p>The breadth matters, but the central theme matters more: understand the complete problem, design the right structure, ship it, support it, and keep improving the experience in the real world.</p>
+      </div>
+
+      <div class="section-card about-layout reveal">
+        <div class="about-copy">
+          <p>I am a software engineering student and working developer based in Islamabad. I enjoy building systems that connect technical depth with a usable final product. My experience includes full-stack applications, organizational IT infrastructure, cloud deployment, WordPress platforms, desktop software, game systems, AI-assisted tools, and hardware prototypes.</p>
+          <p>I currently lead IT and digital development work at the Pak Institute of Peace Studies while also directing technical and product development for APRO. Alongside professional work, I am developing <strong>Whispers of the Book</strong>, a first-person psychological horror game being prepared for release on Steam under the Zeynox Studios identity.</p>
+          <p>I am most interested in projects where I can understand the complete problem, design the underlying system, implement it, troubleshoot it in production, and improve the experience based on real use.</p>
+        </div>
+
+        <div class="about-side">
+          <article class="detail-box">
+            <span class="detail-label">Primary title</span>
+            <p>Software Engineer</p>
+          </article>
+          <article class="detail-box">
+            <span class="detail-label">Professional center</span>
+            <p>Ali builds complete digital systems, from the underlying technical architecture to the final user experience.</p>
+          </article>
+          <article class="detail-box">
+            <span class="detail-label">Zeynox Studios</span>
+            <p>The identity around personal projects, future game releases, experiments, and independent creative technology work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Selected Work</p>
+          <h2>Selected work across platforms, games, AI, and operations.</h2>
+        </div>
+        <p>A mix of product engineering, game development, organizational systems, and applied AI work, with each featured project linked to a dedicated case study.</p>
+      </div>
+
+      <div class="featured-grid" id="featured-projects"></div>
+    </section>
+
+    <section class="section" id="experiments">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Additional Projects</p>
+          <h2>Production support, migrations, prototypes, and experiments.</h2>
+        </div>
+        <p>This layer adds range without losing focus: internal platforms, large migration work, multiplayer exploration, survival systems, and hardware experiments that continue feeding the bigger engineering picture.</p>
+      </div>
+
+      <div class="support-grid" id="supporting-projects"></div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Experience</p>
+          <h2>Practical responsibility across platforms and operations.</h2>
+        </div>
+        <p>The roles here are less about labels and more about ownership: maintaining production systems, supporting people, shipping products, and making technical decisions that hold up outside of ideal conditions.</p>
+      </div>
+
+      <div class="timeline" id="experience-timeline"></div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Technical Capabilities</p>
+          <h2>Grouped by how the work actually happens.</h2>
+        </div>
+        <p>The goal here is practical clarity, not inflated mastery claims. These are the toolsets and capability areas that show up repeatedly across current work and ongoing experiments.</p>
+      </div>
+
+      <div class="capability-layout" id="capabilities"></div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Education</p>
+          <h2>Academic foundation, shaped by live deployment work.</h2>
+        </div>
+        <p>Formal software engineering study continues in parallel with hands-on production responsibility, which helps keep both the theory and the implementation side grounded.</p>
+      </div>
+
+      <div class="education-layout reveal">
+        <article class="education-card">
+          <p class="support-meta">Capital University of Science &amp; Technology / Islamabad, Pakistan</p>
+          <h3>Bachelor of Science in Software Engineering</h3>
+          <p>2022 - Present / Final semester</p>
+          <div class="study-list">
+            <span class="chip">Data structures</span>
+            <span class="chip">Object-oriented programming</span>
+            <span class="chip">Databases</span>
+            <span class="chip">Operating systems</span>
+            <span class="chip">Computer networks</span>
+            <span class="chip">Requirements engineering</span>
+            <span class="chip">Software design</span>
+            <span class="chip">Software architecture</span>
+            <span class="chip">Human-computer interaction</span>
+            <span class="chip">Information security and forensics</span>
+            <span class="chip">Formal methods</span>
+            <span class="chip">Game development</span>
+            <span class="chip">Mobile application development</span>
+          </div>
+        </article>
+
+        <article class="education-card">
+          <p class="support-meta">Working emphasis</p>
+          <h3>Learning while maintaining real systems.</h3>
+          <p>Coursework informs the fundamentals, while current work adds the pressure and discipline of production troubleshooting, deployment decisions, digital operations, and user-facing system maintenance.</p>
+          <div class="study-list">
+            <span class="chip">Architecture thinking</span>
+            <span class="chip">Usability</span>
+            <span class="chip">Deployment reality</span>
+            <span class="chip">Debugging</span>
+            <span class="chip">Cross-disciplinary collaboration</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="beyond">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-eyebrow">Beyond Software</p>
+          <h2>Community, creativity, and studio instincts.</h2>
+        </div>
+        <p>The work is technical, but the broader creative and community side matters too. It shapes product judgment, atmosphere, collaboration, and long-term direction.</p>
+      </div>
+
+      <div class="beyond-grid reveal">
+        <article class="beyond-card">
+          <p class="support-meta">SkatePakistan</p>
+          <span class="support-title">Helping organize accessible community spaces.</span>
+          <p>Ali helps organize SkatePakistan, a nonprofit skateboarding community. The work includes supporting free community sessions, moderation and communication, and helping plan skating activities and events in Islamabad, including Go Skate Day-related efforts.</p>
+          <div class="support-tags">
+            <span class="pill">Community support</span>
+            <span class="pill">Event planning</span>
+            <span class="pill">Leadership</span>
+          </div>
+        </article>
+
+        <article class="beyond-card">
+          <p class="support-meta">Creative practice</p>
+          <span class="support-title">Music, audio, visuals, and hardware curiosity.</span>
+          <p>Creative interests include guitar, audio recording and production, video editing, graphic design, game atmosphere and sound, and hardware experimentation that continues to influence both Zeynox Studios and broader technical exploration.</p>
+          <div class="support-tags">
+            <span class="pill">Music and guitar</span>
+            <span class="pill">Audio production</span>
+            <span class="pill">Video editing</span>
+            <span class="pill">Graphic design</span>
+            <span class="pill">Hardware experimentation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-card reveal">
+        <div>
+          <p class="section-eyebrow">Contact</p>
+          <h3>Let's build something that matters.</h3>
+          <p>I am open to software engineering, product development, game development, and technically ambitious collaborative work.</p>
+          <p class="copy-status" id="copy-status" aria-live="polite"></p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="cta cta-primary" href="mailto:aliarsalan.u6@gmail.com">aliarsalan.u6@gmail.com</a>
+          <a class="copy-button" href="https://www.linkedin.com/in/ali-arsalan-2481213b2/" target="_blank" rel="noopener">LinkedIn</a>
+          <button class="copy-button" id="copy-email" type="button">Copy email</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-label">Zeynox Studios</p>
+        <p class="footer-copy">Software engineering portfolio of Ali Arsalan, presented under the Zeynox Studios identity.</p>
+      </div>
+      <a class="cta cta-secondary" href="../index.html">Return to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    const featuredProjects = [
+      {
+        slug: "apro-works",
+        name: "APRO Works",
+        category: "Desktop Platform / Product Engineering",
+        summary: "A desktop software ecosystem designed to distribute, install, manage, and launch APRO applications through one unified hub.",
+        role: "IT Head / Technical and Product Lead",
+        problem: "Create a single desktop entry point for APRO's broader software ecosystem, including developer-facing and organization-facing tools.",
+        approach: "A lightweight desktop hub was designed around modular applications, centralized authentication, controlled distribution, and a simple install-to-launch experience.",
+        technologies: ["Tauri", "React", "TypeScript", "Python", "Supabase", "Cloud storage", "Git and GitHub", "Cloudflare", "Node.js", "Bun"],
+        status: "Core hub workflows, including downloading, installing, running, and uninstalling applications, are functional.",
+        privacy: "Private repository",
+        outcome: "The hub now supports account access, application distribution, updates, launch flows, and local uninstall management in one place."
+      },
+      {
+        slug: "whispers-of-the-book",
+        name: "Whispers of the Book",
+        category: "Psychological Horror Game / Unity",
+        summary: "A first-person psychological horror game built around sanity, darkness, ritual puzzles, hallucinations, and environmental storytelling.",
+        role: "Game Developer / Systems Designer",
+        problem: "Translate psychological horror ideas into cohesive gameplay systems that reinforce tension, exploration, and narrative beats.",
+        approach: "Interconnected systems were designed around sanity loss, recovery zones, flashlight-based threat control, ritual items, environmental interaction, and reusable first-person architecture.",
+        technologies: ["Unity", "C#", "Universal Render Pipeline", "Blender", "Steamworks", "Git", "3D asset workflows", "Audio and visual production tools"],
+        status: "In active development and being prepared for a Steam release.",
+        privacy: "Case study available",
+        outcome: "A sizeable Unity project with reusable systems, a clear atmospheric direction, and documented deployment planning for PC and Steam."
+      },
+      {
+        slug: "pips-digital-systems",
+        name: "PIPS Digital Systems",
+        category: "Full-Stack Development / IT Operations",
+        summary: "Ongoing development, deployment, maintenance, and modernization of digital platforms used by a research and policy organization.",
+        role: "IT Head",
+        problem: "Support and improve a broad digital ecosystem used by staff, readers, and internal operations.",
+        approach: "Treat the ecosystem as a connected set of public platforms, content systems, hosting environments, databases, and internal workflows rather than as isolated websites.",
+        technologies: ["WordPress", "PHP", "JavaScript", "HTML", "CSS", "Node.js", "MySQL", "Supabase", "Cloudflare", "Hostinger", "REST APIs", "Git", "DNS management"],
+        status: "Ongoing professional work across public-facing platforms and internal systems since July 2025.",
+        privacy: "Organizational systems",
+        outcome: "Ongoing maintenance, modernization, troubleshooting, and new digital work across PIPS, Tajziat, Narratives, Pakistan Saga, and internal systems."
+      },
+      {
+        slug: "ai-rfp-analyzer",
+        name: "AI RFP Analyzer and Proposal Assistant",
+        category: "AI Workflow / Hackathon Project",
+        summary: "An AI-assisted document pipeline that extracts structured requirements from complex RFP documents and generates an initial proposal draft.",
+        role: "Team contribution within Space Raccoons",
+        problem: "Reduce the time it takes to understand large RFP documents and produce a structured starting point for a proposal workflow.",
+        approach: "The workflow combined PDF handling, OCR where needed, retrieval-augmented generation, structured extraction, proposal drafting, and a local-model or API-model switch.",
+        technologies: ["Python", "OCR", "Retrieval-augmented generation", "Language models", "JSON", "PDF processing", "Local AI models", "API-based AI models"],
+        status: "Functional hackathon prototype.",
+        privacy: "Hackathon project",
+        outcome: "A working pipeline from PDF to extracted JSON and draft proposal, with NO-GO handling preserved when requirements are not satisfied."
+      }
+    ];
+
+    const supportingProjects = [
+      {
+        name: "Attendance Management System",
+        category: "Full-Stack Web Application",
+        description: "An employee attendance platform where staff members record their own attendance and administrators manage employees, roles, and attendance data.",
+        tags: ["Node.js", "JavaScript", "Supabase Auth", "MySQL", "HTML and CSS", "Hostinger"]
+      },
+      {
+        name: "Tajziat Platform Migration",
+        category: "WordPress Migration / Content Infrastructure",
+        description: "Migration and modernization of a large Urdu publication platform while preserving years of posts, media, categories, and featured images, including a major PHP-based repair pass for legacy media relationships.",
+        tags: ["WordPress", "PHP", "MySQL", "SSH", "SmartMag", "Custom scripts"]
+      },
+      {
+        name: "Gravity Duels",
+        category: "Multiplayer Game / Networking",
+        description: "A multiplayer game project focused on real-time synchronization, networking, physics consistency, and server-backed gameplay.",
+        tags: ["Game networking", "Real-time systems", "AWS", "Server architecture"]
+      },
+      {
+        name: "Island Survival Game",
+        category: "Unity Game / Gameplay Systems",
+        description: "A 3D first-person survival prototype featuring an island environment, resource collection, crafting, inventory management, and destructible resources.",
+        tags: ["Unity", "C#", "Gameplay systems", "3D environment design"]
+      },
+      {
+        name: "Hardware and Connected-System Experiments",
+        category: "IoT / Physical Computing",
+        description: "Arduino and ESP32 experiments connecting sensors, displays, relays, and serial communication to desktop automation and future compact device concepts.",
+        tags: ["Arduino", "ESP32", "Python", "Serial communication", "Sensors"]
+      },
+      {
+        name: "Earlier Game Projects",
+        category: "Programming Prototypes",
+        description: "Smaller projects including Snake, a Flappy-style game, Pygame experiments, SFML experiments, and early gameplay prototypes that built toward larger Unity and multiplayer systems.",
+        tags: ["Pygame", "SFML", "Gameplay programming", "Prototyping"]
+      }
+    ];
+
+    const experiences = [
+      {
+        organization: "Pak Institute of Peace Studies",
+        role: "IT Head",
+        dates: "July 2025 - Present",
+        location: "Islamabad, Pakistan",
+        description: "Lead the organization's IT operations and digital-development work, including web platforms, deployments, databases, production troubleshooting, staff support, hosting, content systems, and the modernization of internal and public-facing technology.",
+        highlights: [
+          "Maintain and improve organizational websites and content platforms",
+          "Develop internal tools and web applications",
+          "Manage hosting, deployments, domains, and DNS",
+          "Resolve production problems across software, databases, networks, and hardware",
+          "Support WordPress, custom PHP, Node.js, MySQL, Supabase, and cloud services",
+          "Coordinate digital work across PIPS, Tajziat, Narratives, and Pakistan Saga"
+        ]
+      },
+      {
+        organization: "APRO",
+        role: "IT Head / Technical and Product Lead",
+        dates: "January 2026 - Present",
+        location: "Product and platform work",
+        description: "Lead technical and product development for APRO's software ecosystem, including its desktop hub, application-distribution workflow, authentication, cloud infrastructure, product architecture, and related web experiences.",
+        highlights: [
+          "Shaping APRO Works as a connected product ecosystem",
+          "Designing application-distribution and local-install workflows",
+          "Working across desktop UX, authentication, packaging, and deployment",
+          "Supporting related web experiences and platform architecture",
+          "Not the owner or founder of APRO"
+        ]
+      }
+    ];
+
+    const capabilities = [
+      { title: "Languages", items: ["C#", "JavaScript", "TypeScript", "Python", "Java", "C++", "C", "SQL", "HTML", "CSS"] },
+      { title: "Frontend", items: ["React", "Tailwind CSS", "Responsive web interfaces", "Component-based UI development", "Basic Next.js", "WordPress frontend customization", "Human-computer interaction and UI/UX principles"] },
+      { title: "Backend and data", items: ["Node.js", "Express.js", "REST APIs", "API design", "MySQL", "PostgreSQL", "Supabase", "SQLite", "Authentication", "Role-based access", "Database relationships", "Backend data flows"] },
+      { title: "Game development", items: ["Unity", "C#", "Gameplay systems", "First-person controllers", "Interaction systems", "Inventory systems", "Psychological horror mechanics", "Multiplayer concepts", "Game networking", "Unity URP", "Steamworks deployment workflow", "Blender", "3D asset integration"] },
+      { title: "Desktop and product engineering", items: ["Tauri", "React desktop interfaces", "Application packaging", "Download and installation workflows", "Local application management", "Python application integration", "Product architecture"] },
+      { title: "AI and document workflows", items: ["Retrieval-augmented generation", "OCR pipelines", "Structured extraction", "Prompt and context design", "JSON generation and validation", "Local language models", "API-based language models", "AI-assisted software development"] },
+      { title: "Cloud, deployment, and tools", items: ["Git", "GitHub", "GitHub Pages", "Cloudflare Pages and Workers", "Supabase", "AWS", "Hostinger", "Postman", "SSH", "DNS configuration", "Domain management", "Node.js", "Bun", "Visual Studio", "Android Studio"] },
+      { title: "IT and infrastructure", items: ["Production troubleshooting", "Windows systems", "Networking fundamentals", "Hardware and printer support", "Attendance hardware", "Website migration", "Database administration", "Hosting management", "Technical support", "Kali Linux", "Nmap", "VirtualBox"] },
+      { title: "Hardware and IoT", items: ["Arduino", "ESP32", "Sensors", "Relays", "Displays", "Serial communication", "Python desktop automation", "Prototype circuit building"] },
+      { title: "Creative tools", items: ["Blender", "Photoshop", "Premiere Pro", "FL Studio", "Audio production", "Video and thumbnail design", "Visual content creation"] }
+    ];
+
+    function renderFeaturedProjects() {
+      const container = document.getElementById("featured-projects");
+
+      featuredProjects.forEach((project) => {
+        const initials = project.name.split(" ").map((word) => word[0]).join("").slice(0, 3);
+        const article = document.createElement("article");
+        article.className = "project-card reveal";
+        article.innerHTML = `
+          <div class="project-visual" aria-hidden="true">
+            <div class="visual-stage">
+              <div class="visual-top">
+                <span class="visual-badge">${project.category}</span>
+                <span class="visual-badge">${project.privacy}</span>
+              </div>
+              <div class="visual-center">
+                <span class="visual-monogram">${initials}</span>
+              </div>
+              <div class="visual-bottom">
+                <span class="visual-badge">${project.technologies[0]}</span>
+                <span class="visual-badge">${project.technologies[1]}</span>
+                <span class="visual-badge">${project.technologies[2]}</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-copy">
+            <div>
+              <div class="project-head">
+                <div>
+                  <p class="project-kicker">${project.category}</p>
+                  <h3 class="project-title">${project.name}</h3>
+                </div>
+                <span class="private-label">${project.privacy}</span>
+              </div>
+              <p class="project-summary">${project.summary}</p>
+            </div>
+            <div class="project-details">
+              <article class="project-detail">
+                <span class="detail-label">Role</span>
+                <strong>${project.role}</strong>
+              </article>
+              <article class="project-detail">
+                <span class="detail-label">Problem or goal</span>
+                <strong>${project.problem}</strong>
+              </article>
+              <article class="project-detail">
+                <span class="detail-label">Current status</span>
+                <strong>${project.status}</strong>
+              </article>
+              <article class="project-detail">
+                <span class="detail-label">Outcome</span>
+                <strong>${project.outcome}</strong>
+              </article>
+            </div>
+            <div class="project-tags">
+              ${project.technologies.slice(0, 6).map((tech) => `<span class="chip">${tech}</span>`).join("")}
+            </div>
+            <a class="case-study-button" href="case-study.html?project=${project.slug}">View Case Study</a>
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    function renderSupportingProjects() {
+      const container = document.getElementById("supporting-projects");
+      supportingProjects.forEach((project) => {
+        const article = document.createElement("article");
+        article.className = "support-card reveal";
+        article.innerHTML = `
+          <p class="support-meta">${project.category}</p>
+          <span class="support-title">${project.name}</span>
+          <p>${project.description}</p>
+          <div class="support-tags">
+            ${project.tags.map((tag) => `<span class="pill">${tag}</span>`).join("")}
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    function renderExperience() {
+      const container = document.getElementById("experience-timeline");
+      experiences.forEach((item) => {
+        const article = document.createElement("article");
+        article.className = "timeline-card reveal";
+        article.innerHTML = `
+          <div class="timeline-side">
+            <p class="timeline-date">${item.dates}</p>
+            <p class="timeline-location">${item.location}</p>
+          </div>
+          <div>
+            <p class="timeline-role">${item.role}</p>
+            <h3 class="timeline-org">${item.organization}</h3>
+            <p class="timeline-description">${item.description}</p>
+            <ul>
+              ${item.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
+            </ul>
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    function renderCapabilities() {
+      const container = document.getElementById("capabilities");
+      capabilities.forEach((group) => {
+        const article = document.createElement("article");
+        article.className = "capability-group reveal";
+        article.innerHTML = `
+          <h3>${group.title}</h3>
+          <div class="capability-tags">
+            ${group.items.map((item) => `<span class="chip">${item}</span>`).join("")}
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    function setupCopyEmail() {
+      const button = document.getElementById("copy-email");
+      const status = document.getElementById("copy-status");
+      const email = "aliarsalan.u6@gmail.com";
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          status.textContent = "Email copied to clipboard.";
+        } catch (error) {
+          status.textContent = "Copy is not available here. Please use the email button.";
+        }
+      });
+    }
+
+    function setupRevealAnimations() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    }
+
+    renderFeaturedProjects();
+    renderSupportingProjects();
+    renderExperience();
+    renderCapabilities();
+    setupCopyEmail();
+    setupRevealAnimations();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1178 @@
+You are working inside the existing GitHub repository for **zeynoxstudios.com**.
+
+Your task is to design and implement a polished personal portfolio for **Ali Arsalan** at:
+
+`https://zeynoxstudios.com/portfolio`
+
+Before editing anything, inspect the existing repository to understand:
+
+* The current framework and project structure
+* Existing branding, logo, fonts, colors, components, and design language
+* The current GitHub Pages deployment configuration
+* Whether the site uses plain HTML/CSS/JavaScript, React, Vite, Next.js, or another framework
+* How routing and asset paths currently work
+
+Do not unnecessarily rebuild or replace the existing Zeynox Studios homepage. The root website must continue working normally. Add the portfolio as a natural extension of the existing Zeynox Studios website.
+
+## Important deployment requirements
+
+The website is currently deployed from GitHub.
+
+* Preserve the existing GitHub Pages configuration.
+* Do not remove or overwrite the `CNAME` file.
+* Do not change the custom domain.
+* Make sure `/portfolio` works when visited directly, not only after navigating from the homepage.
+* If the current project is static, create a real `/portfolio/index.html` path.
+* If it is a React/Vite SPA, configure routing and GitHub Pages fallback correctly.
+* Use deployment-safe relative or correctly configured absolute asset paths.
+* Do not add a backend merely for the portfolio.
+* Do not introduce API keys or secrets.
+* Run the existing lint, test, and build commands after implementation.
+* Fix any errors caused by the new work.
+* At the end, provide a concise summary of changed files and the commands needed to test locally.
+
+## Portfolio identity
+
+Name:
+
+**Ali Arsalan**
+
+Primary professional title:
+
+**Software Engineer**
+
+Do not overload the hero with several job titles. “Software Engineer” should remain the main title because the portfolio should feel focused rather than exaggerated.
+
+Location:
+
+**Islamabad, Pakistan**
+
+Public email:
+
+**[aliarsalan.u6@gmail.com](mailto:aliarsalan.u6@gmail.com)**
+
+Brand relationship:
+
+Ali Arsalan is the person behind Zeynox Studios, an independent software and game-development identity. Zeynox Studios represents his personal projects, game-development ambitions, experiments, and future releases.
+
+The portfolio should present Ali as a software engineer with experience across:
+
+* Full-stack web development
+* Product and platform development
+* Desktop applications
+* Game development
+* AI-assisted workflows
+* IT operations
+* Cloud deployment
+* WordPress and content platforms
+* Hardware and IoT experimentation
+* Creative technology
+
+Do not make the page appear unfocused. Present this breadth through a clear central theme:
+
+> Ali builds complete digital systems, from the underlying technical architecture to the final user experience.
+
+## Critical accuracy rules
+
+Do not invent metrics, clients, awards, qualifications, testimonials, employers, responsibilities, technologies, or project outcomes.
+
+Do not describe Ali as the founder, owner, or creator of APRO.
+
+**APRO belongs to Ali’s friend. Ali serves as its IT Head and leads its technical and product development.**
+
+APRO is separate from Ali’s employment at the Pak Institute of Peace Studies.
+
+Do not suggest that APRO is connected to PIPS.
+
+The PIPS-related platforms include:
+
+* Pak Institute of Peace Studies
+* Tajziat
+* Narratives
+* Pakistan Saga
+* Pakistan Saga’s YouTube channel
+* Internal organizational systems such as attendance management
+
+Most professional repositories are private. Do not place fake GitHub links or “View Source” buttons on project cards.
+
+Use case studies instead of source-code links. The portfolio should show Ali’s thinking, responsibilities, architecture, challenges, and outcomes without exposing private organizational code.
+
+Do not add a prominent GitHub link until Ali has public projects ready. The site may be structured so a GitHub link can easily be added later.
+
+## Desired visual direction
+
+Create a premium, modern, slightly cinematic portfolio that feels appropriate for both software engineering and game development.
+
+Use the existing Zeynox Studios brand as the starting point. Reuse or extend its visual identity rather than introducing an unrelated theme.
+
+The design should feel:
+
+* Dark, refined, and professional
+* Technical without looking like a generic coding template
+* Creative without looking childish
+* Futuristic in a restrained way
+* Spacious and editorial
+* Suitable for job applications
+* Memorable enough to represent a future game studio
+
+Avoid:
+
+* Generic Matrix/code-rain backgrounds
+* Excessive neon
+* Constant glowing effects
+* Overused purple-blue gradients everywhere
+* Fake terminal windows as the main design
+* Skill percentage bars
+* Meaningless statistics
+* Stock photographs of laptops or programmers
+* Excessive glassmorphism
+* Large amounts of floating particles
+* Typewriter animations that make the content slow to read
+* Overly complicated 3D effects
+* Long walls of text on the initial page
+
+Use:
+
+* Strong typography
+* Clear information hierarchy
+* Subtle grid, texture, or atmospheric background details
+* Purposeful hover states
+* Restrained scroll animations
+* Smooth anchor navigation
+* Well-designed project cards
+* Small technical diagrams or architecture-style visual elements where useful
+* Responsive layouts
+* High readability and accessibility
+* Respect for `prefers-reduced-motion`
+
+Animations must remain subtle and performant.
+
+## Recommended page structure
+
+Create the following sections:
+
+1. Navigation
+2. Hero
+3. About
+4. Selected Work
+5. Experience
+6. Technical Capabilities
+7. Additional Projects and Experiments
+8. Education
+9. Beyond Software
+10. Contact
+11. Footer
+
+The page should be concise enough for recruiters to scan but detailed enough for technical visitors to explore.
+
+## Navigation
+
+Use a sticky or intelligently positioned navigation bar containing:
+
+* Zeynox Studios logo or wordmark
+* Work
+* Experience
+* Skills
+* About
+* Contact
+
+Include a subtle way to return to the main Zeynox Studios homepage.
+
+Possible label:
+
+“Zeynox Studios”
+
+Do not make the portfolio feel like an entirely separate website.
+
+## Hero content
+
+Use this copy as the basis, adjusting only where required for the visual layout:
+
+Eyebrow:
+
+**Ali Arsalan · Islamabad, Pakistan**
+
+Heading:
+
+**Software Engineer**
+
+Main introduction:
+
+**I build complete digital products across web, desktop, games, AI workflows, and experimental hardware—combining technical problem-solving with thoughtful user experiences.**
+
+Supporting text:
+
+**My work ranges from organizational platforms and production websites to psychological horror games, multiplayer systems, AI document tools, and connected-device experiments.**
+
+Primary CTA:
+
+**Explore My Work**
+
+Secondary CTA:
+
+**Contact Me**
+
+A third, less prominent link may return to the Zeynox Studios homepage.
+
+Do not use phrases such as:
+
+* Coding ninja
+* Tech wizard
+* Rockstar developer
+* Visionary entrepreneur
+* 10x engineer
+* Digital alchemist
+
+## About section
+
+Use this content as the foundation:
+
+**I am a software engineering student and working developer based in Islamabad. I enjoy building systems that connect technical depth with a usable final product. My experience includes full-stack applications, organizational IT infrastructure, cloud deployment, WordPress platforms, desktop software, game systems, AI-assisted tools, and hardware prototypes.**
+
+**I currently lead IT and digital development work at the Pak Institute of Peace Studies while also directing technical and product development for APRO. Alongside professional work, I am developing Whispers of the Book, a first-person psychological horror game being prepared for release on Steam under the Zeynox Studios identity.**
+
+**I am most interested in projects where I can understand the complete problem, design the underlying system, implement it, troubleshoot it in production, and improve the experience based on real use.**
+
+Keep the tone grounded. It should communicate ambition without pretending Ali is already running a large studio or major company.
+
+## Selected Work
+
+Selected Work should be the strongest visual section.
+
+Each featured project should have:
+
+* Project name
+* Short category
+* One-sentence summary
+* Ali’s role
+* The problem or goal
+* Key systems or contributions
+* Technologies
+* Outcome or current status
+* A “View Case Study” interaction
+
+Case studies may be separate static pages, expandable sections, accessible dialogs, or detail panels. Choose the solution that best fits the current framework and GitHub Pages deployment.
+
+Do not link to private repositories.
+
+### Featured Project 1: APRO Works
+
+Project name:
+
+**APRO Works**
+
+Category:
+
+**Desktop Platform · Product Engineering**
+
+Suggested summary:
+
+**A desktop software ecosystem designed to distribute, install, manage, and launch APRO applications through one unified hub.**
+
+Ali’s role:
+
+**IT Head / Technical and Product Lead**
+
+Accuracy note:
+
+Ali is not APRO’s founder or owner.
+
+Core information:
+
+* APRO evolved into an ecosystem called APRO Works.
+* Its broader direction includes a developer ecosystem, certifications, creative technology tools, SaaS products, and organization/team platforms.
+* The first major product is a desktop hub that distributes and manages APRO applications.
+* The desktop shell uses Tauri with React and TypeScript.
+* Applications can include long-running Python and HTML-based tools.
+* Authentication is handled through Supabase.
+* Application packages are distributed through cloud storage.
+* The hub supports downloading, installing, launching, updating, and uninstalling applications.
+* Applications are installed into appropriate local application-data locations.
+* Ali worked on product structure, user flows, technical architecture, authentication, deployment, application packaging, and debugging.
+* Related work includes APRO Launchpad Jr.
+* The platform’s source repositories are private.
+
+Suggested case-study structure:
+
+Problem:
+
+**APRO needed more than a collection of unrelated tools. It needed a central environment through which users could access and manage its growing software ecosystem.**
+
+Approach:
+
+**A lightweight desktop hub was designed around modular applications, centralized authentication, controlled distribution, and a simple install-to-launch experience.**
+
+Key contributions:
+
+* Product architecture and module planning
+* Desktop application shell
+* Authentication and account flow
+* Application catalogue
+* Download and installation system
+* Local application management
+* Launch and uninstall workflows
+* Cloud deployment and domain configuration
+* Debugging across Windows, GitHub, Supabase, and Cloudflare environments
+
+Technologies:
+
+* Tauri
+* React
+* TypeScript
+* Python
+* Supabase
+* Cloud storage
+* Git and GitHub
+* Cloudflare
+* Node.js and Bun
+
+Status:
+
+**Core hub workflows, including downloading, installing, running, and uninstalling applications, are functional.**
+
+### Featured Project 2: Whispers of the Book
+
+Project name:
+
+**Whispers of the Book**
+
+Category:
+
+**Psychological Horror Game · Unity**
+
+Suggested summary:
+
+**A first-person psychological horror game built around sanity, darkness, ritual puzzles, hallucinations, and environmental storytelling.**
+
+Role:
+
+**Game Developer / Systems Designer**
+
+Core information:
+
+* Final-year software engineering project
+* Developed in Unity using C#
+* Uses Unity 2022 LTS and the Universal Render Pipeline
+* Intended for PC
+* Will be distributed through Steam
+* The game was previously titled Escape the Other Side
+* It combines exploration, puzzle-solving, survival pressure, and psychological horror
+* Darkness drains the player’s sanity
+* Light zones allow sanity recovery
+* A flashlight system can temporarily freeze or control threats
+* Reaching zero sanity can trigger hallucination-related tasks or sequences
+* The inventory separates regular items from key narrative or ritual items
+* Regular items include batteries, prayer pages, and syringes
+* Key items include a ritual dagger, journal, book pages, keys, and artifacts
+* Interaction uses a consistent “E to Interact” system
+* The user interface follows a book-inspired visual direction
+* Systems include first-person movement, crouching, gravity, smoothing, head bob controls, inventory, interaction, pause settings, audio, graphics, controls, and gameplay options
+* Major content includes First Alignment, dream-sequence puzzles, Silent Choir stealth, return sequences, rituals, and multiple horror encounters
+* A multiplayer concept was also designed around a Survivor and Ghost dynamic
+* Survivor concepts include Prayer Page and Focus
+* Ghost concepts include Presence Drain, Jumpscare, and Disruption
+* Deployment documentation covers Windows builds, Steamworks upload, and installation through Steam
+
+Case-study emphasis:
+
+* Translating horror ideas into interconnected gameplay systems
+* Designing mechanics that support atmosphere rather than interrupt it
+* Managing a sizeable Unity project
+* Building reusable interaction and inventory architecture
+* Connecting technical implementation with narrative pacing
+
+Technologies:
+
+* Unity
+* C#
+* Universal Render Pipeline
+* Blender
+* Steamworks
+* Git
+* 3D asset workflows
+* Audio and visual production tools
+
+Status:
+
+**In active development and being prepared for a Steam release.**
+
+Do not say it “may” be released on Steam. The intended deployment is Steam.
+
+### Featured Project 3: PIPS Digital Systems
+
+Project name:
+
+**PIPS Digital Systems**
+
+Category:
+
+**Full-Stack Development · IT Operations**
+
+Suggested summary:
+
+**Ongoing development, deployment, maintenance, and modernization of digital platforms used by a research and policy organization.**
+
+Role:
+
+**IT Head**
+
+Organization:
+
+**Pak Institute of Peace Studies — Islamabad**
+
+Start date:
+
+**November 2025**
+
+Core responsibilities:
+
+* Leading day-to-day IT operations
+* Developing and maintaining organizational websites
+* Managing WordPress and custom web platforms
+* Resolving production issues
+* Managing hosting and deployments
+* Working with databases and backend data
+* Integrating plugins, APIs, and content systems
+* Maintaining domains, DNS, email, systems, and technical infrastructure
+* Supporting staff with hardware and software
+* Helping translate organizational requirements into usable digital systems
+
+Associated platforms:
+
+* PIPS
+* Tajziat
+* Narratives
+* Pakistan Saga
+* Pakistan Saga YouTube
+* Internal attendance and administration systems
+
+This case study may present PIPS as a digital ecosystem rather than a single website.
+
+Technologies can include:
+
+* WordPress
+* PHP
+* JavaScript
+* HTML and CSS
+* Node.js
+* MySQL
+* Supabase
+* Cloudflare
+* Hostinger
+* REST APIs
+* Git
+* DNS and domain management
+
+Do not describe APRO as part of this ecosystem.
+
+### Featured Project 4: AI RFP Analyzer
+
+Project name:
+
+**AI RFP Analyzer and Proposal Assistant**
+
+Category:
+
+**AI Workflow · Hackathon Project**
+
+Team:
+
+**Space Raccoons**
+
+Suggested summary:
+
+**An AI-assisted document pipeline that extracts structured requirements from complex RFP documents and generates an initial proposal draft.**
+
+Context:
+
+* Built during a three-day hackathon
+* The selected challenge involved extracting RFP fields into structured JSON and producing a proposal draft
+* The workflow handled complex PDF documents
+* It used OCR where necessary
+* Retrieval-augmented generation was integrated
+* The system passed selected context to a language model
+* It generated structured JSON containing RFP information
+* It also generated a proposal draft
+* A local-model/API switch was incorporated
+* The design retained a NO-GO result when requirements were not satisfied
+* One tested document was Karandaaz Pakistan RFP No. 185
+* The pipeline was approximately PDF → OCR → retrieval → language model → JSON/proposal
+* Smaller operations completed within a few seconds, while the complete RAG workflow took roughly one minute in development testing
+
+Ali’s contribution should be described as part of the team, without inventing sole ownership.
+
+Suggested areas of contribution:
+
+* Pipeline integration
+* Document-processing flow
+* RAG integration
+* Structured extraction
+* JSON validation
+* Proposal generation
+* Performance testing
+* Local/API model support
+* Debugging and product decisions
+
+Technologies:
+
+* Python
+* OCR
+* Retrieval-augmented generation
+* Language models
+* JSON
+* PDF processing
+* Local and API-based AI models
+
+Status:
+
+**Functional hackathon prototype.**
+
+## Supporting case studies and projects
+
+Present these in a more compact grid below the featured work.
+
+### Attendance Management System
+
+Category:
+
+**Full-Stack Web Application**
+
+Description:
+
+**An employee attendance platform where staff members record their own attendance and administrators manage employees, roles, and attendance data.**
+
+Core details:
+
+* Email-first authentication flow
+* First-login password setup
+* Main administrator can create additional administrators
+* Employees record their own attendance
+* Role-based access
+* Node.js-based application
+* Supabase authentication
+* Hostinger MySQL database
+* Deployed at `attendance.pakpips.com`
+* Work included authentication, database relationships, attendance records, permissions, deployment, and production debugging
+
+Technologies:
+
+* Node.js
+* JavaScript
+* Supabase Auth
+* MySQL
+* HTML and CSS
+* Hostinger
+
+### Tajziat Platform Migration
+
+Category:
+
+**WordPress Migration · Content Infrastructure**
+
+Description:
+
+**Migration and modernization of a large Urdu publication platform while preserving years of posts, media, categories, and featured images.**
+
+Core details:
+
+* Tajziat is an Urdu-language publication platform
+* Migrated and rebuilt using WordPress and the SmartMag ecosystem
+* Worked with approximately 2,476 posts
+* Migrated roughly 1.9 GB of uploaded media
+* Developed and ran a PHP repair process for legacy featured images
+* Successfully repaired 1,293 featured-image associations in one major pass
+* Investigated missing media and failed registrations
+* Resolved issues involving imported content, authors, media paths, homepage ordering, sticky posts, Urdu frontend settings, English administration needs, sidebars, categories, demos, and page-builder limitations
+* Used staging environments, SSH, database work, WordPress plugins, and custom scripts
+
+Technologies:
+
+* WordPress
+* PHP
+* MySQL
+* SSH
+* SmartMag
+* Page builders
+* Media migration tools
+* Custom scripts
+
+Avoid presenting the 1,293 repaired images as the total number of posts.
+
+### Gravity Duels
+
+Category:
+
+**Multiplayer Game · Networking**
+
+Description:
+
+**A multiplayer game project focused on real-time synchronization, networking, physics consistency, and server-backed gameplay.**
+
+Core details:
+
+* Multiplayer architecture
+* Real-time game-state synchronization
+* Physics and state consistency
+* Server and networking work
+* AWS deployment or infrastructure exposure
+
+Technologies:
+
+* Game networking
+* Real-time systems
+* AWS
+* Programming and server architecture
+
+Do not invent player counts, release details, or performance metrics.
+
+### Island Survival Game
+
+Category:
+
+**Unity Game · Gameplay Systems**
+
+Description:
+
+**A 3D first-person survival prototype featuring an island environment, resource collection, crafting, inventory management, and destructible resources.**
+
+Core details:
+
+* Island environment built from scratch
+* First-person gameplay
+* Crafting
+* Inventory
+* Item pickup
+* Tree chopping
+* Rock breaking
+* Health bars
+* Focus on immersive mechanics
+* Reusable and scalable gameplay code
+
+Technologies:
+
+* Unity
+* C#
+* 3D environment design
+* Gameplay systems
+
+### Hardware and Connected-System Experiments
+
+Category:
+
+**IoT · Physical Computing**
+
+Description:
+
+**A collection of Arduino and ESP32 experiments connecting sensors, displays, microcontrollers, and desktop automation.**
+
+Core details:
+
+* Arduino UNO and Nano
+* ESP32
+* Motion sensors
+* Sound sensors
+* LDR light sensors
+* LCD 16×2 with I2C
+* Relays
+* Servo motors
+* LEDs
+* Serial communication
+* PC automation through Python
+* A motion-triggered system that sent serial events to a PC
+* Python used the events to trigger Windows desktop shortcuts
+* Arduino-to-ESP32 communication was tested using shared ground and voltage division
+* Future experiments include ESP32-CAM, desk notification systems, and compact information displays
+* Smart Extension is an earlier IoT-oriented project that may be mentioned where relevant
+
+Technologies:
+
+* Arduino
+* ESP32
+* C/C++
+* Python
+* Serial communication
+* Sensors
+* Basic electronics
+* Windows automation
+
+### Earlier Game Projects
+
+Present briefly without overstating them:
+
+* Snake
+* Flappy-style game
+* Pygame experiments
+* SFML experiments
+* Small gameplay and programming prototypes
+
+These demonstrate the progression toward larger Unity and multiplayer projects.
+
+## Professional experience
+
+Create a clear timeline.
+
+### Pak Institute of Peace Studies
+
+Title:
+
+**IT Head**
+
+Dates:
+
+**November 2025 — Present**
+
+Location:
+
+**Islamabad, Pakistan**
+
+Description:
+
+**Lead the organization’s IT operations and digital-development work, including web platforms, deployments, databases, production troubleshooting, staff support, hosting, content systems, and the modernization of internal and public-facing technology.**
+
+Highlights:
+
+* Maintain and improve organizational websites and content platforms
+* Develop internal tools and web applications
+* Manage hosting, deployments, domains, and DNS
+* Resolve production problems across software, databases, networks, and hardware
+* Support WordPress, custom PHP, Node.js, MySQL, Supabase, and cloud services
+* Coordinate digital work across PIPS, Tajziat, Narratives, and Pakistan Saga
+
+### APRO
+
+Title:
+
+**IT Head / Technical and Product Lead**
+
+Do not provide an invented start date.
+
+Description:
+
+**Lead technical and product development for APRO’s software ecosystem, including its desktop hub, application-distribution workflow, authentication, cloud infrastructure, product architecture, and related web experiences.**
+
+Accuracy statement for internal implementation:
+
+**Do not call Ali the owner or founder of APRO.**
+
+### Nazra App
+
+Title:
+
+**Software Engineering Intern**
+
+Dates:
+
+**July 7, 2025 — September 20, 2025**
+
+Description:
+
+**Contributed to a mobile application environment through content implementation, Android/Flutter-related workflows, XML work, testing, and iOS TestFlight distribution exposure.**
+
+Relevant areas:
+
+* Mobile development workflow
+* Flutter and Android environment
+* XML-based content
+* Application testing
+* iOS TestFlight
+* Professional 9-to-5 development environment
+* Collaboration and delivery within an existing product
+
+Do not invent a company location or additional responsibilities.
+
+## Technical capabilities
+
+Do not use percentage bars. Group skills by capability.
+
+### Languages
+
+* C#
+* JavaScript
+* TypeScript
+* Python
+* Java
+* C++
+* C
+* SQL
+* HTML
+* CSS
+
+### Frontend
+
+* React
+* Tailwind CSS
+* Responsive web interfaces
+* Component-based UI development
+* Basic Next.js
+* WordPress frontend customization
+* Human-computer interaction and UI/UX principles
+
+### Backend and data
+
+* Node.js
+* Express.js
+* REST APIs
+* API design
+* MySQL
+* PostgreSQL
+* Supabase
+* SQLite
+* Authentication
+* Role-based access
+* Database relationships
+* Backend data flows
+
+### Game development
+
+* Unity
+* C#
+* Gameplay systems
+* First-person controllers
+* Interaction systems
+* Inventory systems
+* Psychological horror mechanics
+* Multiplayer concepts
+* Game networking
+* Unity URP
+* Steamworks deployment workflow
+* Blender
+* 3D asset integration
+
+### Desktop and product engineering
+
+* Tauri
+* React desktop interfaces
+* Application packaging
+* Download and installation workflows
+* Local application management
+* Python application integration
+* Product architecture
+
+### AI and document workflows
+
+* Retrieval-augmented generation
+* OCR pipelines
+* Structured extraction
+* Prompt and context design
+* JSON generation and validation
+* Local language models
+* API-based language models
+* AI-assisted software development
+
+### Cloud, deployment, and tools
+
+* Git
+* GitHub
+* GitHub Pages
+* Cloudflare Pages and Workers
+* Supabase
+* AWS
+* Hostinger
+* Postman
+* SSH
+* DNS configuration
+* Domain management
+* Node.js
+* Bun
+* Visual Studio
+* Android Studio
+
+### IT and infrastructure
+
+* Production troubleshooting
+* Windows systems
+* Networking fundamentals
+* Hardware and printer support
+* Attendance hardware
+* Website migration
+* Database administration
+* Hosting management
+* Technical support
+* Kali Linux
+* Nmap
+* VirtualBox
+
+### Hardware and IoT
+
+* Arduino
+* ESP32
+* Sensors
+* Relays
+* Displays
+* Serial communication
+* Python desktop automation
+* Prototype circuit building
+
+### Creative tools
+
+* Blender
+* Photoshop
+* Premiere Pro
+* FL Studio
+* Audio production
+* Video and thumbnail design
+* Visual content creation
+
+The skill presentation should emphasize practical use rather than presenting every item as expert-level mastery.
+
+## Education
+
+Institution:
+
+**Capital University of Science & Technology**
+
+Location:
+
+**Islamabad, Pakistan**
+
+Degree:
+
+**Bachelor of Science in Software Engineering**
+
+Dates:
+
+**2022 — Present**
+
+Status:
+
+**Final semester**
+
+Relevant areas of study may include:
+
+* Data structures
+* Object-oriented programming
+* Databases
+* Operating systems
+* Computer networks
+* Requirements engineering
+* Software design
+* Software architecture
+* Human-computer interaction
+* Information security and forensics
+* Formal methods
+* Game development
+* Mobile application development
+
+Do not say Ali has graduated unless the content is updated later.
+
+## Beyond software
+
+Create a concise section showing personality and leadership without distracting from the professional portfolio.
+
+### SkatePakistan
+
+Ali helps organize **SkatePakistan**, a nonprofit community around skateboarding.
+
+Relevant details:
+
+* Helps organize free community sessions
+* Supports community moderation and communication
+* Has helped plan skating activities and events in Islamabad
+* Values accessible community spaces
+* Has been involved in planning events such as Go Skate Day activities
+
+Use this to demonstrate community leadership, initiative, and event organization.
+
+### Creative interests
+
+Ali also works with:
+
+* Music and guitar
+* Audio recording and production
+* Video editing
+* Graphic design
+* Game atmosphere and sound
+* Hardware experimentation
+
+Keep this section visual and concise.
+
+## Contact section
+
+Suggested heading:
+
+**Let’s build something that matters.**
+
+Suggested body:
+
+**I am open to software engineering, product development, game development, and technically ambitious collaborative work.**
+
+Contact method:
+
+**[aliarsalan.u6@gmail.com](mailto:aliarsalan.u6@gmail.com)**
+
+Use a standard `mailto:` link.
+
+Do not build a fake contact form that has no functioning delivery method. A polished email CTA is better than a nonfunctional form.
+
+A copy-email interaction may be added with accessible confirmation feedback.
+
+## Resume functionality
+
+Create a resume button only if a real resume PDF already exists in the repository or is added to an appropriate assets folder.
+
+Recommended path:
+
+`/portfolio/assets/Ali-Arsalan-Resume.pdf`
+
+If no PDF exists, do not create an empty or broken link. Structure the component so it can be enabled easily later.
+
+## Project interaction
+
+The portfolio should not merely display project logos.
+
+Each case study should answer:
+
+1. What was the problem?
+2. What was Ali’s role?
+3. What did he build or improve?
+4. What technical decisions were involved?
+5. What challenges were solved?
+6. What was the outcome or current status?
+7. What technologies were used?
+
+Use short summaries on the main page and deeper details only when the visitor chooses to explore.
+
+For private work, use labels such as:
+
+* Private repository
+* Internal platform
+* Organizational system
+* Case study available
+
+Do not make these labels look apologetic. Private professional work is valid portfolio material.
+
+## Suggested project ordering
+
+Use this order for featured work:
+
+1. APRO Works
+2. Whispers of the Book
+3. PIPS Digital Systems
+4. AI RFP Analyzer
+
+Use this order for supporting work:
+
+1. Attendance Management System
+2. Tajziat Platform Migration
+3. Gravity Duels
+4. Island Survival Game
+5. Hardware and Connected-System Experiments
+6. Earlier Game Projects
+
+This order balances software/product engineering, game development, professional production work, and AI experimentation.
+
+## SEO and metadata
+
+Add appropriate metadata for the portfolio page.
+
+Suggested page title:
+
+**Ali Arsalan — Software Engineer | Zeynox Studios**
+
+Suggested description:
+
+**Portfolio of Ali Arsalan, a software engineer based in Islamabad working across full-stack platforms, desktop applications, game development, AI workflows, cloud deployment, and experimental hardware.**
+
+Add:
+
+* Open Graph title
+* Open Graph description
+* Canonical URL
+* Favicon using the existing Zeynox branding
+* Appropriate social-preview image support
+* Semantic heading structure
+* Descriptive alt text
+* `Person` structured data where appropriate
+
+Do not expose private phone numbers, addresses, repository URLs, credentials, or internal infrastructure information.
+
+## Performance and accessibility
+
+The completed page should:
+
+* Be fully responsive
+* Work on modern desktop and mobile browsers
+* Be usable with a keyboard
+* Have visible focus states
+* Use semantic HTML
+* Maintain good color contrast
+* Avoid layout shift
+* Lazy-load noncritical images
+* Minimize large dependencies
+* Respect reduced-motion preferences
+* Avoid blocking the page with animation
+* Avoid horizontal overflow
+* Maintain fast initial loading
+* Have no console errors
+
+Do not use a heavy animation or 3D library unless the existing project already uses it and the effect provides meaningful value.
+
+## Content architecture
+
+Store repeated project and experience content in structured data instead of duplicating markup.
+
+Depending on the existing stack, use something similar to:
+
+* A `projects` data array
+* An `experience` data array
+* Reusable project-card components
+* Reusable case-study components
+* A shared section-heading component
+* A shared technology-tag component
+
+Keep the code clean and easy to update.
+
+## Assets
+
+First inspect the existing repository for:
+
+* Zeynox logo
+* Brand colors
+* Existing screenshots
+* Game imagery
+* Project graphics
+* Favicons
+* Social-preview images
+* Resume file
+
+Reuse suitable assets.
+
+Where project images do not exist, create elegant CSS-based visual treatments, abstract architecture cards, UI mockup frames, or clearly marked placeholders. Do not download random stock images.
+
+Do not fabricate screenshots of software that do not exist.
+
+Build image slots with useful filenames and comments so Ali can replace them later, such as:
+
+* `apro-works-preview`
+* `whispers-of-the-book-preview`
+* `pips-digital-systems-preview`
+* `rfp-analyzer-preview`
+* `tajziat-migration-preview`
+* `hardware-lab-preview`
+
+## Final quality bar
+
+The result should look like a serious portfolio made for a working software engineer, not a student template.
+
+It should communicate:
+
+* Ali can ship real systems
+* Ali can work across a full product lifecycle
+* Ali understands both engineering and user experience
+* Ali has handled real production and organizational problems
+* Ali has depth in game-development systems
+* Ali experiments with AI and hardware
+* Ali is ambitious but honest about the stage of each project
+
+Prioritize credibility, visual polish, clear case studies, and strong responsive behavior.
+
+After implementation:
+
+1. Run the project locally.
+2. Run linting and production build commands.
+3. Resolve errors.
+4. Check the `/portfolio` route directly.
+5. Check navigation from and back to the Zeynox homepage.
+6. Verify that the custom-domain and GitHub Pages files remain intact.
+7. Summarize what was implemented.
+8. List any image or resume assets Ali should add later.
