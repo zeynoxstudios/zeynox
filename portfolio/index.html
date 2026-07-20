@@ -315,6 +315,109 @@
       transform: translateY(-2px);
     }
 
+    .resume-dialog {
+      width: min(calc(100% - 28px), 720px);
+      margin: auto;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background:
+        linear-gradient(180deg, rgba(20, 20, 26, 0.98), rgba(10, 10, 14, 0.98));
+      color: var(--text);
+    }
+
+    .resume-dialog::backdrop {
+      background: rgba(6, 6, 9, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .resume-dialog-shell {
+      padding: 24px;
+    }
+
+    .resume-dialog-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    .resume-dialog-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin-top: 6px;
+    }
+
+    .resume-dialog-copy {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 34rem;
+    }
+
+    .resume-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .resume-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .resume-item {
+      padding-top: 14px;
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .resume-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: var(--accent-strong);
+    }
+
+    .resume-item p {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 32rem;
+    }
+
+    .resume-item-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.035);
+      text-decoration: none;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .resume-item-status[aria-disabled="true"] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
     .hero-notes {
       margin-top: 36px;
       display: grid;
@@ -851,6 +954,10 @@
       .hero {
         padding-top: 54px;
       }
+
+      .resume-item {
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -943,7 +1050,7 @@
 
           <div class="hero-actions">
             <a class="cta cta-primary" href="#work">Explore My Work</a>
-            <a class="cta cta-secondary" href="./assets/Ali-Arsalan-Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+            <button class="cta cta-secondary" type="button" data-open-resume-dialog>Download CV</button>
             <a class="cta cta-secondary" href="mailto:aliarsalan.u6@gmail.com">Contact Me</a>
             <a class="cta-tertiary" href="../index.html">Back to Zeynox Studios</a>
           </div>
@@ -1139,7 +1246,7 @@
         </div>
 
         <div class="contact-actions">
-          <a class="copy-button" href="./assets/Ali-Arsalan-Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+          <button class="copy-button" type="button" data-open-resume-dialog>Download CV</button>
           <a class="cta cta-primary" href="mailto:aliarsalan.u6@gmail.com">aliarsalan.u6@gmail.com</a>
           <a class="copy-button" href="https://www.linkedin.com/in/ali-arsalan-2481213b2/" target="_blank" rel="noopener">LinkedIn</a>
           <button class="copy-button" id="copy-email" type="button">Copy email</button>
@@ -1158,7 +1265,38 @@
     </div>
   </footer>
 
+  <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-dialog-title">
+    <div class="resume-dialog-shell">
+      <div class="resume-dialog-top">
+        <div>
+          <p class="section-eyebrow">Resume Options</p>
+          <h2 class="resume-dialog-title" id="resume-dialog-title">Choose a resume</h2>
+          <p class="resume-dialog-copy">Different roles call for different emphasis. Choose the version that best matches what you want to review.</p>
+        </div>
+        <button class="resume-close" id="resume-dialog-close" type="button" aria-label="Close resume chooser">×</button>
+      </div>
+      <div class="resume-list" id="resume-list"></div>
+    </div>
+  </dialog>
+
   <script>
+    const resumeOptions = [
+      {
+        id: "product",
+        title: "Product Resume",
+        description: "Focused on product building, SaaS thinking, AI workflows, full-stack delivery, and platform development.",
+        href: "./assets/Ali-Arsalan-Resume.pdf",
+        available: true
+      },
+      {
+        id: "game-dev",
+        title: "Game Dev Resume",
+        description: "Focused on Unity, gameplay systems, horror design, interaction architecture, and game-development work.",
+        href: "./assets/Ali-Arsalan-Resume-GameDev.pdf",
+        available: true
+      }
+    ];
+
     const featuredProjects = [
       {
         slug: "apro-works",
@@ -1416,6 +1554,50 @@
       });
     }
 
+    function renderResumeOptions() {
+      const container = document.getElementById("resume-list");
+      container.innerHTML = "";
+
+      resumeOptions.forEach((resume) => {
+        const article = document.createElement("article");
+        article.className = "resume-item";
+
+        const actionMarkup = resume.available
+          ? `<a class="resume-item-status" href="${resume.href}" target="_blank" rel="noopener">Open PDF</a>`
+          : `<span class="resume-item-status" aria-disabled="true">Coming Soon</span>`;
+
+        article.innerHTML = `
+          <div>
+            <strong>${resume.title}</strong>
+            <p>${resume.description}</p>
+          </div>
+          ${actionMarkup}
+        `;
+
+        container.appendChild(article);
+      });
+    }
+
+    function setupResumeDialog() {
+      const dialog = document.getElementById("resume-dialog");
+      const closeButton = document.getElementById("resume-dialog-close");
+
+      renderResumeOptions();
+
+      document.querySelectorAll("[data-open-resume-dialog]").forEach((trigger) => {
+        trigger.addEventListener("click", () => dialog.showModal());
+      });
+
+      closeButton.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        const bounds = dialog.getBoundingClientRect();
+        const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+        if (outside) {
+          dialog.close();
+        }
+      });
+    }
+
     function setupCopyEmail() {
       const button = document.getElementById("copy-email");
       const status = document.getElementById("copy-status");
@@ -1453,6 +1635,7 @@
     renderSupportingProjects();
     renderExperience();
     renderCapabilities();
+    setupResumeDialog();
     setupCopyEmail();
     setupRevealAnimations();
   </script>
